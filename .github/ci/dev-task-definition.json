@@ -9,13 +9,19 @@
         "logDriver": "awslogs",
         "secretOptions": null,
         "options": {
-          "awslogs-group": "/ecs/admin-dev",
+          "awslogs-group": "/ecs/PetGpt-dev",
           "awslogs-region": "ap-northeast-2",
           "awslogs-stream-prefix": "ecs"
         }
       },
       "entryPoint": [],
-      "portMappings": [],
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "protocol": "tcp",
+          "containerPort": 80
+        }
+      ],
       "command": [],
       "linuxParameters": null,
       "cpu": 0,
@@ -31,7 +37,7 @@
       "memoryReservation": null,
       "volumesFrom": [],
       "stopTimeout": null,
-      "image": "499379503116.dkr.ecr.ap-northeast-2.amazonaws.com",
+      "image": "499379503116.dkr.ecr.ap-northeast-2.amazonaws.com/petgpt-admin-dev",
       "startTimeout": null,
       "firelensConfiguration": null,
       "dependsOn": null,
@@ -48,7 +54,7 @@
       "dockerLabels": null,
       "systemControls": null,
       "privileged": null,
-      "name": "admin-dev"
+      "name": "petgpt-admin-dev"
     }
   ],
   "placementConstraints": [],
@@ -58,8 +64,8 @@
     "EC2",
     "FARGATE"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:ap-northeast-2:499379503116:task-definition/admin-dev:1",
-  "family": "admin-dev",
+  "taskDefinitionArn": "arn:aws:ecs:ap-northeast-2:499379503116:task-definition/PetGpt-dev:1",
+  "family": "PetGpt-dev",
   "requiresAttributes": [
     {
       "targetId": null,
@@ -77,7 +83,19 @@
       "targetId": null,
       "targetType": null,
       "value": null,
+      "name": "com.amazonaws.ecs.capability.ecr-auth"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
       "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "ecs.capability.execution-role-ecr-pull"
     },
     {
       "targetId": null,
