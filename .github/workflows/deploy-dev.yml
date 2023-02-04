@@ -3,7 +3,7 @@ name: '개발 배포'
 on:
   push:
     branches:
-      - main
+      - dev
 env:
   SERVICE: admin
   APP_ENV: production
@@ -76,25 +76,3 @@ jobs:
           task-definition: ${{ steps.render-web-container.outputs.task-definition }}
           service: ${{ env.SERVICE }}
           cluster: ${{ env.CLUSTER }}
-
-      - name: Send result
-        id: slack
-        uses: slackapi/slack-github-action@v1.18.0
-        with:
-          # For posting a rich message using Block Kit
-          payload: |
-            {
-              "text": "[Web Prod update]: ${{ job.status }} - ${{ github.event.head_commit.message }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}",
-              "blocks": [
-                {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": "[Web Prod update]: ${{ job.status }} - ${{ github.event.head_commit.message }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
-                  }
-                }
-              ]
-            }
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
