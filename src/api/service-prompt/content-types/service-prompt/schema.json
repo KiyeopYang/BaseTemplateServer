@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "service_prompts",
+  "info": {
+    "singularName": "service-prompt",
+    "pluralName": "service-prompts",
+    "displayName": "ServicePrompt"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "prompt": {
+      "type": "text"
+    },
+    "name": {
+      "type": "string"
+    }
+  }
+}

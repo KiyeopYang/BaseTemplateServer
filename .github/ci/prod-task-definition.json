@@ -54,7 +54,7 @@
       "dockerLabels": null,
       "systemControls": null,
       "privileged": null,
-      "name": "admin"
+      "name": "petgpt-admin"
     }
   ],
   "placementConstraints": [],
@@ -64,7 +64,7 @@
     "EC2",
     "FARGATE"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:ap-northeast-2:499379503116:task-definition/admin:1",
+  "taskDefinitionArn": "arn:aws:ecs:ap-northeast-2:499379503116:task-definition/admin:2",
   "family": "admin",
   "requiresAttributes": [
     {
@@ -117,7 +117,7 @@
   "networkMode": "awsvpc",
   "runtimePlatform": null,
   "cpu": "512",
-  "revision": 1,
+  "revision": 2,
   "status": "ACTIVE",
   "inferenceAccelerators": null,
   "proxyConfiguration": null,
