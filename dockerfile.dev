@@ -15,7 +15,7 @@ ENV AWS_ACCESS_KEY_ID AKIAWUH7PC7F2Q4BEMOK
 ENV AWS_ACCESS_SECRET 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
 ENV AWS_REGION ap-northeast-2
 ENV AWS_BUCKET petgpt-dev-static
-ENV URL https://admin.artddle.com
+ENV URL https://admin-dev.pet-gpt.com.com
 ENV KAKAO_REST_CLIENT_ID c39b554afa965a0a32e7a0ee21d7727a
 ENV KAKAO_REST_CLIENT_SECRET ZjClA0QW52LWKolQSYj8PIeDHtd18X2P
 ENV URL https://admin-dev.pet-gpt.com
