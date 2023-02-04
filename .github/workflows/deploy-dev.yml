@@ -9,7 +9,7 @@ env:
   APP_ENV: production
   ECR_REGISTRY: 499379503116.dkr.ecr.ap-northeast-2.amazonaws.com
   ECR_REPOSITORY: petgpt-admin-dev
-  CLUSTER: PetGpt
+  CLUSTER: PetGpt-dev
   TASK_DEFINITION: ./.github/ci/prod-task-definition.json
   GIT_COMMIT: ${{ github.sha }}
   # IS_CONFIRMED: ${{ github.event.inputs.isConfirmed }}
@@ -18,7 +18,7 @@ env:
 
 jobs:
   deploy:
-    name: 운영 배포 프로세스
+    name: 개발 배포 프로세스
     runs-on: ubuntu-latest
 
     steps:
