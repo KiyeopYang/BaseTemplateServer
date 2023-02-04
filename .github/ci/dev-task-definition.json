@@ -59,12 +59,9 @@
   ],
   "placementConstraints": [],
   "memory": "1024",
-  "taskRoleArn": "arn:aws:iam::499379503116:role/ecsTaskExecutionRole",
-  "compatibilities": [
-    "EC2",
-    "FARGATE"
-  ],
-  "taskDefinitionArn": "arn:aws:ecs:ap-northeast-2:499379503116:task-definition/PetGpt-dev:2",
+  "taskRoleArn": null,
+  "compatibilities": ["EC2", "FARGATE"],
+  "taskDefinitionArn": "arn:aws:ecs:ap-northeast-2:499379503116:task-definition/PetGpt-dev:3",
   "family": "PetGpt-dev",
   "requiresAttributes": [
     {
@@ -95,12 +92,6 @@
       "targetId": null,
       "targetType": null,
       "value": null,
-      "name": "com.amazonaws.ecs.capability.task-iam-role"
-    },
-    {
-      "targetId": null,
-      "targetType": null,
-      "value": null,
       "name": "ecs.capability.execution-role-ecr-pull"
     },
     {
@@ -117,16 +108,14 @@
     }
   ],
   "pidMode": null,
-  "requiresCompatibilities": [
-    "FARGATE"
-  ],
+  "requiresCompatibilities": ["FARGATE"],
   "networkMode": "awsvpc",
   "runtimePlatform": {
     "operatingSystemFamily": "LINUX",
     "cpuArchitecture": null
   },
   "cpu": "512",
-  "revision": 2,
+  "revision": 3,
   "status": "ACTIVE",
   "inferenceAccelerators": null,
   "proxyConfiguration": null,

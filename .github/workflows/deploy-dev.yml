@@ -10,7 +10,7 @@ env:
   ECR_REGISTRY: 499379503116.dkr.ecr.ap-northeast-2.amazonaws.com
   ECR_REPOSITORY: petgpt-admin-dev
   CLUSTER: PetGpt-dev
-  TASK_DEFINITION: ./.github/ci/prod-task-definition.json
+  TASK_DEFINITION: ./.github/ci/dev-task-definition.json
   GIT_COMMIT: ${{ github.sha }}
   REF_NAME: ${{ github.ref_name }}
   REF_TYPE: ${{ github.ref_type	}}
