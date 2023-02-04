@@ -20,7 +20,7 @@ ENV KAKAO_REST_CLIENT_SECRET ZjClA0QW52LWKolQSYj8PIeDHtd18X2P
 ENV URL https://admin.pet-gpt.com
 ENV FRONTEND_URL https://pet-gpt.com
 ENV DATABASE_HOST petgpt.cby2xvm9mdjq.ap-northeast-2.rds.amazonaws.com
-ENV DATABASE_PASSWORD dfggv#QhVv4^SZ!
+ENV DATABASE_PASSWORD dfggv#QhVv4^SZ
 ENV DATABASE_NAME petgpt
 ENV PORT 80
 

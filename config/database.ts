@@ -4,7 +4,7 @@ export default ({ env }) => ({
     connection: {
       host: env(
         'DATABASE_HOST',
-        'petgpt-dev.cby2xvm9mdjq.ap-northeast-2.rds.amazonaws.com'
+        'petgpt.cby2xvm9mdjq.ap-northeast-2.rds.amazonaws.com'
       ),
       port: env.int('DATABASE_PORT', 5432),
       database: env('DATABASE_NAME', 'postgres'),
