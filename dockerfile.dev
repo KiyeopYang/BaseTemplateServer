@@ -1,7 +1,6 @@
 FROM node:18-alpine
 # Installing libvips-dev for sharp Compatability
 
-
 RUN apk update && apk add --no-cache build-base gcc autoconf automake zlib-dev libpng-dev vips-dev > /dev/null 2>&1
 
 ENV NODE_ENV production
@@ -22,6 +21,7 @@ ENV URL https://admin-dev.pet-gpt.com
 ENV FRONTEND_URL https://dev.pet-gpt.com
 ENV DATABASE_HOST petgpt-dev.cby2xvm9mdjq.ap-northeast-2.rds.amazonaws.com
 ENV DATABASE_PASSWORD dfggv#QhVv4^SZ!
+ENV DATABASE_NAME postgres
 ENV PORT 80
 
 WORKDIR /app
