@@ -1,58 +1,16 @@
-# 🚀 Getting started with Strapi
+서버 CICD 구성 방법
 
-Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html) (CLI) which lets you scaffold and manage your project in seconds.
-
-### `develop`
-
-Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-develop)
-
-```
-npm run develop
-# or
-yarn develop
-```
-
-### `start`
-
-Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-start)
-
-```
-npm run start
-# or
-yarn start
-```
-
-### `build`
-
-Build your admin panel. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-build)
-
-```
-npm run build
-# or
-yarn build
-```
-
-## ⚙️ Deployment
-
-Strapi gives you many possible deployment options for your project. Find the one that suits you on the [deployment section of the documentation](https://docs.strapi.io/developer-docs/latest/setup-deployment-guides/deployment.html).
-
-## 📚 Learn more
-
-- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
-- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
-- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
-- [Strapi blog](https://docs.strapi.io) - Official Strapi blog containing articles made by the Strapi team and the community.
-- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
-
-Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
-
-## ✨ Community
-
-- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
-- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
-- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
-
----
-
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
-# petgpt-server
+1. AWS CLI 토큰 발급
+2. 깃허브 액션에서 키 등록 \* AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY
+3. Route 53 도메인 발급
+4. 인증서 발급
+5. ECR 컨테이너 생성
+6. ECS 클러스터 생성
+7. 작업 정의 생성 : 구 UI로 생성하고 ECR 컨테이너 바라보고 JSON 확보
+8. JSON 을 코드에 저장
+9. 로드 밸런서 생성 (롤링이면 먼저 선 생성 / RG배포면 후 생성(아마)) - 보안 그룹 권한 유념 / 인증서 적용
+10. 서비스 생성 - 보안 그룹 권한 유념 / 인증서 적용
+11. 도커 빌드가 정상적으로 작동하는 지 확인
+12. push하여 ecs에 정상적으로 탑재되는지 확인
+13. 로드밸런서 dns로 접속 되는지 확인
+14. route 53 통해 해당 로드밸런서 바로보도록 수정
